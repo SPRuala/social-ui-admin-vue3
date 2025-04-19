@@ -191,15 +191,22 @@
       <!--  />-->
       <!--</el-form-item>-->
       <el-form-item>
-        <el-button @click="handleQuery"><Icon icon="ep:search" class="mr-5px" /> 搜索</el-button>
-        <el-button @click="resetQuery"><Icon icon="ep:refresh" class="mr-5px" /> 重置</el-button>
+        <el-button @click="handleQuery">
+          <Icon icon="ep:search" class="mr-5px"/>
+          搜索
+        </el-button>
+        <el-button @click="resetQuery">
+          <Icon icon="ep:refresh" class="mr-5px"/>
+          重置
+        </el-button>
         <el-button
           type="primary"
           plain
           @click="openForm('create')"
           v-hasPermi="['system:health-data:create']"
         >
-          <Icon icon="ep:plus" class="mr-5px" /> 新增
+          <Icon icon="ep:plus" class="mr-5px"/>
+          新增
         </el-button>
         <el-button
           type="success"
@@ -208,7 +215,8 @@
           :loading="exportLoading"
           v-hasPermi="['system:health-data:export']"
         >
-          <Icon icon="ep:download" class="mr-5px" /> 导出
+          <Icon icon="ep:download" class="mr-5px"/>
+          导出
         </el-button>
       </el-form-item>
     </el-form>
@@ -217,27 +225,66 @@
   <!-- 列表 -->
   <ContentWrap>
     <el-table v-loading="loading" :data="list" :stripe="true" :show-overflow-tooltip="true">
-      <el-table-column label="编号" align="center" prop="id" />
-      <el-table-column label="身高" align="center" prop="height" />
-      <el-table-column label="体重" align="center" prop="weight" />
-      <el-table-column label="体温" align="center" prop="temperature" />
-      <el-table-column label="心率" align="center" prop="heartRate" />
-      <el-table-column label="收缩血压" align="center" prop="systolicBloodPressure" />
-      <el-table-column label="舒张血压" align="center" prop="diastolicBloodPressure" />
-      <el-table-column label="空腹血糖" align="center" prop="fastingBloodGlucose" />
-      <el-table-column label="餐后血糖" align="center" prop="postprandialBloodGlucose" />
-      <el-table-column label="血氧饱和度" align="center" prop="bloodOxygenSaturation" />
-      <el-table-column label="总胆固醇" align="center" prop="cholesterol" />
-      <el-table-column label="尿酸" align="center" prop="uricAcid" />
-      <el-table-column label="左眼" align="center" prop="leftEye" />
-      <el-table-column label="右眼" align="center" prop="rightEye" />
-      <el-table-column label="左耳" align="center" prop="leftEar" />
-      <el-table-column label="右耳" align="center" prop="rightEar" />
-      <el-table-column label="肌肉率" align="center" prop="musclePercentage" />
-      <el-table-column label="体脂率" align="center" prop="bodyFatPercentage" />
-      <el-table-column label="腰围" align="center" prop="waistCircumference" />
-      <el-table-column label="臀围" align="center" prop="hipCircumference" />
-      <el-table-column label="水分率" align="center" prop="moistureContent" />
+      <el-table-column label="编号" align="center" prop="id"/>
+      <el-table-column label="身高" align="center" prop="height"/>
+      <el-table-column label="体重" align="center" prop="weight">
+        <template #default="scope">
+          <el-tooltip
+            class="box-item"
+            effect="dark"
+            :content="checkBMI(scope.row.height, scope.row.weight)?.status"
+            placement="top-start"
+          >
+            <el-tag :type="checkBMI(scope.row.height, scope.row.weight)?.health?'success':'danger'">
+              {{ checkBMI(scope.row.height, scope.row.weight)?.bmi }}
+            </el-tag>
+          </el-tooltip>
+        </template>
+      </el-table-column>
+      <el-table-column label="体温" align="center" prop="temperature">
+        <template #default="scope">
+          <el-tooltip
+            class="box-item"
+            effect="dark"
+            :content="scope.row.temperature>37.3?'体温过高':'正常'"
+            placement="top-start"
+          >
+            <el-tag :type="scope.row.temperature>37.3?'danger':'success'">
+              {{ scope.row.temperature }}
+            </el-tag>
+          </el-tooltip>
+        </template>
+      </el-table-column>
+      <el-table-column label="心率" align="center" prop="heartRate">
+        <template #default="scope">
+          <el-tooltip
+            class="box-item"
+            effect="dark"
+            :content="scope.row.heartRate>100?'心率过高':(scope.row.heartRate<60?'心率过低':'正常')"
+            placement="top-start"
+          >
+            <el-tag :type="scope.row.heartRate>100||scope.row.heartRate<60?'danger':'success'">
+              {{ scope.row.heartRate }}
+            </el-tag>
+          </el-tooltip>
+        </template>
+      </el-table-column>
+      <el-table-column label="收缩血压" align="center" prop="systolicBloodPressure"/>
+      <el-table-column label="舒张血压" align="center" prop="diastolicBloodPressure"/>
+      <el-table-column label="空腹血糖" align="center" prop="fastingBloodGlucose"/>
+      <el-table-column label="餐后血糖" align="center" prop="postprandialBloodGlucose"/>
+      <el-table-column label="血氧饱和度" align="center" prop="bloodOxygenSaturation"/>
+      <el-table-column label="总胆固醇" align="center" prop="cholesterol"/>
+      <el-table-column label="尿酸" align="center" prop="uricAcid"/>
+      <el-table-column label="左眼" align="center" prop="leftEye"/>
+      <el-table-column label="右眼" align="center" prop="rightEye"/>
+      <el-table-column label="左耳" align="center" prop="leftEar"/>
+      <el-table-column label="右耳" align="center" prop="rightEar"/>
+      <el-table-column label="肌肉率" align="center" prop="musclePercentage"/>
+      <el-table-column label="体脂率" align="center" prop="bodyFatPercentage"/>
+      <el-table-column label="腰围" align="center" prop="waistCircumference"/>
+      <el-table-column label="臀围" align="center" prop="hipCircumference"/>
+      <el-table-column label="水分率" align="center" prop="moistureContent"/>
       <el-table-column
         label="创建时间"
         align="center"
@@ -276,20 +323,20 @@
   </ContentWrap>
 
   <!-- 表单弹窗：添加/修改 -->
-  <HealthDataForm ref="formRef" @success="getList" />
+  <HealthDataForm ref="formRef" @success="getList"/>
 </template>
 
 <script setup lang="ts">
-import { dateFormatter } from '@/utils/formatTime'
+import {dateFormatter} from '@/utils/formatTime'
 import download from '@/utils/download'
-import { HealthDataApi, HealthDataVO } from '@/api/system/healthdata'
+import {HealthDataApi, HealthDataVO} from '@/api/system/healthdata'
 import HealthDataForm from './HealthDataForm.vue'
 
 /** 老人健康数据 列表 */
-defineOptions({ name: 'HealthData' })
+defineOptions({name: 'HealthData'})
 
 const message = useMessage() // 消息弹窗
-const { t } = useI18n() // 国际化
+const {t} = useI18n() // 国际化
 
 const loading = ref(true) // 列表的加载中
 const list = ref<HealthDataVO[]>([]) // 列表的数据
@@ -363,7 +410,8 @@ const handleDelete = async (id: number) => {
     message.success(t('common.delSuccess'))
     // 刷新列表
     await getList()
-  } catch {}
+  } catch {
+  }
 }
 
 /** 导出按钮操作 */
@@ -385,4 +433,18 @@ const handleExport = async () => {
 onMounted(() => {
   getList()
 })
+
+const checkBMI = (height: number, weight: number) => {
+  if (height && weight) {
+    const heightInMeters = height / 100
+    const bmi = weight / (heightInMeters * heightInMeters)
+    return {
+      bmi: bmi.toFixed(2),
+      status: bmi < 18.5 ? '偏瘦' : (bmi < 24.9 ? '正常' : (bmi < 29.9 ? '超重' : '肥胖')),
+      // 是否正常
+      health: bmi >= 18.5 && bmi < 24.9
+    }
+  }
+  return null
+}
 </script>
