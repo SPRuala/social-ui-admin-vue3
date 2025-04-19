@@ -243,4 +243,5 @@ export enum DICT_TYPE {
   IOT_RW_TYPE = 'iot_rw_type', // IOT 读写类型
 
   HOSPITAL_TYPE = 'hospital_type', // 医院类型
+  SERVICE_TYPE = 'service_type', // 服务类型
 }
