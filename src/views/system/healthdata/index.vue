@@ -8,15 +8,6 @@
       :inline="true"
       label-width="68px"
     >
-      <el-form-item label="老人编号" prop="userId">
-        <el-input
-          v-model="queryParams.userId"
-          placeholder="请输入老人编号"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
       <el-form-item label="身高" prop="height">
         <el-input
           v-model="queryParams.height"
@@ -53,152 +44,152 @@
           class="!w-240px"
         />
       </el-form-item>
-      <el-form-item label="收缩血压" prop="systolicBloodPressure">
-        <el-input
-          v-model="queryParams.systolicBloodPressure"
-          placeholder="请输入收缩血压"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="舒张血压" prop="diastolicBloodPressure">
-        <el-input
-          v-model="queryParams.diastolicBloodPressure"
-          placeholder="请输入舒张血压"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="空腹血糖" prop="fastingBloodGlucose">
-        <el-input
-          v-model="queryParams.fastingBloodGlucose"
-          placeholder="请输入空腹血糖"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="餐后血糖" prop="postprandialBloodGlucose">
-        <el-input
-          v-model="queryParams.postprandialBloodGlucose"
-          placeholder="请输入餐后血糖"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="血氧饱和度" prop="bloodOxygenSaturation">
-        <el-input
-          v-model="queryParams.bloodOxygenSaturation"
-          placeholder="请输入血氧饱和度"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="总胆固醇" prop="cholesterol">
-        <el-input
-          v-model="queryParams.cholesterol"
-          placeholder="请输入总胆固醇"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="尿酸" prop="uricAcid">
-        <el-input
-          v-model="queryParams.uricAcid"
-          placeholder="请输入尿酸"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="左眼" prop="leftEye">
-        <el-input
-          v-model="queryParams.leftEye"
-          placeholder="请输入左眼"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="右眼" prop="rightEye">
-        <el-input
-          v-model="queryParams.rightEye"
-          placeholder="请输入右眼"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="左耳" prop="leftEar">
-        <el-input
-          v-model="queryParams.leftEar"
-          placeholder="请输入左耳"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="右耳" prop="rightEar">
-        <el-input
-          v-model="queryParams.rightEar"
-          placeholder="请输入右耳"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="肌肉率" prop="musclePercentage">
-        <el-input
-          v-model="queryParams.musclePercentage"
-          placeholder="请输入肌肉率"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="体脂率" prop="bodyFatPercentage">
-        <el-input
-          v-model="queryParams.bodyFatPercentage"
-          placeholder="请输入体脂率"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="腰围" prop="waistCircumference">
-        <el-input
-          v-model="queryParams.waistCircumference"
-          placeholder="请输入腰围"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="臀围" prop="hipCircumference">
-        <el-input
-          v-model="queryParams.hipCircumference"
-          placeholder="请输入臀围"
-          clearable
-          @keyup.enter="handleQuery"
-          class="!w-240px"
-        />
-      </el-form-item>
-      <el-form-item label="创建时间" prop="createTime">
-        <el-date-picker
-          v-model="queryParams.createTime"
-          value-format="YYYY-MM-DD HH:mm:ss"
-          type="daterange"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
-          :default-time="[new Date('1 00:00:00'), new Date('1 23:59:59')]"
-          class="!w-220px"
-        />
-      </el-form-item>
+      <!--<el-form-item label="收缩血压" prop="systolicBloodPressure">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.systolicBloodPressure"-->
+      <!--    placeholder="请输入收缩血压"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="舒张血压" prop="diastolicBloodPressure">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.diastolicBloodPressure"-->
+      <!--    placeholder="请输入舒张血压"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="空腹血糖" prop="fastingBloodGlucose">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.fastingBloodGlucose"-->
+      <!--    placeholder="请输入空腹血糖"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="餐后血糖" prop="postprandialBloodGlucose">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.postprandialBloodGlucose"-->
+      <!--    placeholder="请输入餐后血糖"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="血氧饱和度" prop="bloodOxygenSaturation">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.bloodOxygenSaturation"-->
+      <!--    placeholder="请输入血氧饱和度"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="总胆固醇" prop="cholesterol">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.cholesterol"-->
+      <!--    placeholder="请输入总胆固醇"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="尿酸" prop="uricAcid">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.uricAcid"-->
+      <!--    placeholder="请输入尿酸"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="左眼" prop="leftEye">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.leftEye"-->
+      <!--    placeholder="请输入左眼"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="右眼" prop="rightEye">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.rightEye"-->
+      <!--    placeholder="请输入右眼"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="左耳" prop="leftEar">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.leftEar"-->
+      <!--    placeholder="请输入左耳"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="右耳" prop="rightEar">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.rightEar"-->
+      <!--    placeholder="请输入右耳"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="肌肉率" prop="musclePercentage">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.musclePercentage"-->
+      <!--    placeholder="请输入肌肉率"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="体脂率" prop="bodyFatPercentage">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.bodyFatPercentage"-->
+      <!--    placeholder="请输入体脂率"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="腰围" prop="waistCircumference">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.waistCircumference"-->
+      <!--    placeholder="请输入腰围"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="臀围" prop="hipCircumference">-->
+      <!--  <el-input-->
+      <!--    v-model="queryParams.hipCircumference"-->
+      <!--    placeholder="请输入臀围"-->
+      <!--    clearable-->
+      <!--    @keyup.enter="handleQuery"-->
+      <!--    class="!w-240px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
+      <!--<el-form-item label="创建时间" prop="createTime">-->
+      <!--  <el-date-picker-->
+      <!--    v-model="queryParams.createTime"-->
+      <!--    value-format="YYYY-MM-DD HH:mm:ss"-->
+      <!--    type="daterange"-->
+      <!--    start-placeholder="开始日期"-->
+      <!--    end-placeholder="结束日期"-->
+      <!--    :default-time="[new Date('1 00:00:00'), new Date('1 23:59:59')]"-->
+      <!--    class="!w-220px"-->
+      <!--  />-->
+      <!--</el-form-item>-->
       <el-form-item>
         <el-button @click="handleQuery"><Icon icon="ep:search" class="mr-5px" /> 搜索</el-button>
         <el-button @click="resetQuery"><Icon icon="ep:refresh" class="mr-5px" /> 重置</el-button>
@@ -227,7 +218,6 @@
   <ContentWrap>
     <el-table v-loading="loading" :data="list" :stripe="true" :show-overflow-tooltip="true">
       <el-table-column label="编号" align="center" prop="id" />
-      <el-table-column label="老人编号" align="center" prop="userId" />
       <el-table-column label="身高" align="center" prop="height" />
       <el-table-column label="体重" align="center" prop="weight" />
       <el-table-column label="体温" align="center" prop="temperature" />
@@ -307,7 +297,6 @@ const total = ref(0) // 列表的总页数
 const queryParams = reactive({
   pageNo: 1,
   pageSize: 10,
-  userId: undefined,
   height: undefined,
   weight: undefined,
   temperature: undefined,
@@ -360,6 +349,7 @@ const resetQuery = () => {
 /** 添加/修改操作 */
 const formRef = ref()
 const openForm = (type: string, id?: number) => {
+  console.log(type, id)
   formRef.value.open(type, id)
 }
 
