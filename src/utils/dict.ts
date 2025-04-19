@@ -1,8 +1,8 @@
 /**
  * 数据字典工具类
  */
-import { useDictStoreWithOut } from '@/store/modules/dict'
-import { ElementPlusInfoType } from '@/types/elementPlus'
+import {useDictStoreWithOut} from '@/store/modules/dict'
+import {ElementPlusInfoType} from '@/types/elementPlus'
 
 const dictStore = useDictStoreWithOut()
 
@@ -240,5 +240,7 @@ export enum DICT_TYPE {
   IOT_PRODUCT_FUNCTION_TYPE = 'iot_product_function_type', // IOT 产品功能类型
   IOT_DATA_TYPE = 'iot_data_type', // IOT 数据类型
   IOT_UNIT_TYPE = 'iot_unit_type', // IOT 单位类型
-  IOT_RW_TYPE = 'iot_rw_type' // IOT 读写类型
+  IOT_RW_TYPE = 'iot_rw_type', // IOT 读写类型
+
+  HOSPITAL_TYPE = 'hospital_type', // 医院类型
 }
